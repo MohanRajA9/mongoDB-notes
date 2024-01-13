@@ -127,4 +127,8 @@ db.products.find()
 db.products.find().pretty() 
 
 // to find one particular document in a collection 
-db.products.find( { "name" : "Samsung Galaxy Book2 Pro 360 Intel 12th Gen i7 EvoTM 33.78 cm (13.3)"  } ) .pretty() 
+db.products.findOne( { "name" : "Samsung Galaxy Book2 Pro 360 Intel 12th Gen i7 EvoTM 33.78 cm (13.3)"  } )
+
+// using operator for example "$gte" => greater than and equal to
+db.products.find({ratings : { "$gte" : 4.7 }}).pretty()
+db.products.find({ratings : { "$lt" : 4 }}).pretty()
